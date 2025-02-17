@@ -9,10 +9,10 @@ import pydeck as pdk
 import streamlit as st
 
 st.set_page_config(
-    "New Streamlit theme", "https://streamlit.io/images/brand/streamlit-mark-color.svg"
+    "Streamlit new theme", "https://streamlit.io/images/brand/streamlit-mark-color.svg"
 )
 st.logo("https://streamlit.io/images/brand/streamlit-mark-color.svg")
-st.title("New Streamlit theme")
+st.title("Streamlit new theme")
 
 if st.checkbox("Enable CSS hacks", True):
     st.html(
