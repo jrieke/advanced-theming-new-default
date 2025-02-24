@@ -19,56 +19,157 @@ if st.checkbox("Enable CSS hacks", True):
         """
         <style>
         
-        .stSidebar > div:nth-of-type(2) > div > div {
+        .stSidebar > div:last-of-type > div > div {
             background-image: linear-gradient(to right, transparent 20%, rgba(34, 34, 34, 0.3) 28%, transparent 36%);
         }
         
-        .stCode pre {
+        /*.stCode pre {
             background-color: #f5f7f9;
-        }
+        }*/
         
-        .stButton button[kind="secondary"]:hover, .stDownloadButton button[kind="secondary"]:hover, .stLinkButton a:hover, .stFormSubmitButton button[kind="secondary"]:hover, .stPopover button[kind="secondary"]:hover {
-            background-color: #f3f3f3 !important;
-            border-color: #cdcdcf !important;
+        .stButton button[kind="secondary"]:hover, .stDownloadButton button[kind="secondary"]:hover, .stLinkButton a[kind="secondary"]:hover, .stFormSubmitButton button[kind="secondary"]:hover, .stPopover button[kind="secondary"]:hover {
+            background-color: #f9fafb !important;
+            border-color: #d6d6d9 !important;
             color: inherit !important;
         }
         
-        .stButton button[kind="secondary"]:focus, .stDownloadButton button[kind="secondary"]:focus, .stLinkButton a:focus, .stFormSubmitButton button[kind="secondary"]:focus, .stPopover button[kind="secondary"]:focus {
-            border-color: #cdcdcf !important;
+        .stButton button[kind="secondary"]:active, .stDownloadButton button[kind="secondary"]:active, .stLinkButton a[kind="secondary"]:active, .stFormSubmitButton button[kind="secondary"]:active, .stPopover button[kind="secondary"]:active {
+            background-color: #f0f2f6 !important;
+            border-color: #d6d6d9 !important;
             color: inherit !important;
+        }
+        
+        .stButton button[kind="secondary"]:focus, .stDownloadButton button[kind="secondary"]:focus, .stLinkButton a[kind="secondary"]:focus, .stFormSubmitButton button[kind="secondary"]:focus, .stPopover button[kind="secondary"]:focus {
+            border-color: #d6d6d9 !important;
+            color: inherit !important;
+        }
+        
+        .stButton button[kind="tertiary"]:hover, .stDownloadButton button[kind="tertiary"]:hover, .stLinkButton a[kind="tertiary"]:hover, .stFormSubmitButton button[kind="tertiary"]:hover, .stPopover button[kind="tertiary"]:hover {
+            background-color: #f9fafb !important;
+            padding: 0.25rem 0.75rem !important;
+            transform: translateX(-12px) !important;
+            color: inherit !important;
+        }
+        
+        .stButton button[kind="tertiary"]:active, .stDownloadButton button[kind="tertiary"]:active, .stLinkButton a[kind="tertiary"]:active, .stFormSubmitButton button[kind="tertiary"]:active, .stPopover button[kind="tertiary"]:active {
+            background-color: #f0f2f6 !important;
+            border-color: #d6d6d9 !important;
+            color: inherit !important;
+        }
+        
+        .stPopover div[aria-expanded="true"] button {
+            background-color: #f9fafb !important;
+        }
+        
+        .stPopover div[aria-expanded="true"] button:hover {
+            background-color: #f0f2f6 !important;
         }
         
         .stExpander summary {
-            background-color: #f5f7f9 !important;
-            padding: 0.5rem 0.5rem !important;
-            border-top-left-radius: 0.5rem !important;
-            border-top-right-radius: 0.5rem !important;
+            background-color: #ffffff !important;
+            padding: 0.4rem 0.5rem !important;
+            border-radius: 0.5rem !important;
             
             > span {
                 order: 2;
             }
             
+            > span p {
+                font-size: 1rem !important;
+            }
+            
             > svg {
                 order: 1;
-                margin-right: 0.5rem;
+                margin-right: 0.125rem;
+                margin-top: 0.2rem;
                 transform: rotate(-90deg);
             }
         }
         
-        .stExpander summary:hover span, .stExpander summary:hover svg  {
-            color: #262730 !important;
-            fill: #262730 !important;
+        .stExpander summary:hover {
+            background-color: #f8f9fb !important;
+            
+            span {
+                color: #262730 !important;
+            }
+            
+            svg {
+                fill: #262730 !important;
+            }
+        }
+        
+        .stExpander summary:active {
+            background-color: #f0f2f6 !important;
+        }
+        
+        .stExpander details[open] summary {
+            background-color: #f8f9fb !important;
+            border-bottom-right-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+        
+        .stExpander details[open] summary:hover {
+            background-color: #f0f2f6 !important;
         }
         
         .stExpander > details > div {
-            padding-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #d6d6d9;
+        }
+        
+        
+        /* First page in sidebar nav */
+        [data-testid="stSidebarNav"] li:first-of-type a {
+            background-color: #f0f2f6 !important;
+        }
+        [data-testid="stSidebarNav"] li:first-of-type a:hover {
+            background-color: #f0f2f6 !important;
+        }
+        
+        /* Other pages in sidebar nav */
+        [data-testid="stSidebarNav"] li a {
+            transform: translateX(-8px) !important;
+        }
+        [data-testid="stSidebarNav"] li a:hover {
+            background-color: #f8f9fb !important;
+        }
+        
+        
+        /* Toolbar buttons */
+        .stAppToolbar button:hover {
+            background-color: #f8f9fb !important;
+        }
+        
+        .stAppToolbar button:active {
+            background-color: #f0f2f6 !important;
+        }
+        
+        .stMainMenu[aria-expanded="true"] button {
+            background-color: #f8f9fb !important;
+        }
+        
+        .stMainMenu[aria-expanded="true"] button:hover {
+            background-color: #f0f2f6 !important;
+        }
+        
+        [data-testid="stSidebarCollapsedControl"] button:hover {
+            background-color: #f8f9fb !important;
+        }
+        
+        [data-testid="stSidebarCollapsedControl"] button:active {
+            background-color: #f0f2f6 !important;
+        }
+        
+        
+        .stHelp > div:first-of-type {
+            border-bottom: 1px solid #d7d7d7 !important;
         }
         
         
         </style>
         """
     )
-    
+
 
 def page1():
     pass
